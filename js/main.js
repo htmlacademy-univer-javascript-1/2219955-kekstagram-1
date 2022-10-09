@@ -32,8 +32,6 @@ const NAMES = [
     'Анна'
 ];
 
-//данные о фотографиях
-const photos = [];
 
 let countLikes = {
     MIN: 15,
@@ -68,10 +66,14 @@ const createPhotoData = (id) => ({
     comments: createComment(id)
 });
  
-//добавляем данные к фотографиям
-for(let i = 0; i < COUNT_PHOTO; i++) {
-    photos.push(createPhotoData(i + 1));
+//добавляем данные к фотографиям  
+const generateData = () => {
+    const photos = [];
+    for(let i = 0; i < COUNT_PHOTO; i++) {
+        photos.push(createPhotoData(i + 1));
+    }
+    return photos;
 }
-  
+
 checkStringLength('Проверить длину строки', 140);
-photos();
+generateData();
