@@ -40,7 +40,6 @@ let countLikes = {
 MAX_PHOTOS = 25;
 MAX_COMMENTS = 6;
 
-//генерируем комментарии
 const createComments = (id) => ({
   id,
   avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
