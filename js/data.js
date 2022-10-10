@@ -42,19 +42,19 @@ MAX_COMMENTS = 6;
 
 //генерируем комментарии
 const createComments = (id) => ({
-    id,
-    avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
-    message: MESSAGES[getRandomPositiveInteger(0, MESSAGES.length - 1)],
-    name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
+  id,
+  avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
+  message: MESSAGES[getRandomPositiveInteger(0, MESSAGES.length - 1)],
+  name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
 });
   
 const createPhotosData = (id) => ({
-    id,
-    url: `photos/${id}.jpg`,
-    description: getRandomArrayElement(DESCRIPTIONS),
-    likes: getRandomPositiveInteger(countLikes.MIN, countLikes.MAX),
-    comments: Array.from({length: getRandomPositiveInteger(1, MAX_COMMENTS)}).map((element, index) => createComments(index + 1)),
-  });
+  id,
+  url: `photos/${id}.jpg`,
+  description: getRandomArrayElement(DESCRIPTIONS),
+  likes: getRandomPositiveInteger(countLikes.MIN, countLikes.MAX),
+  comments: Array.from({length: getRandomPositiveInteger(1, MAX_COMMENTS)}).map((element, index) => createComments(index + 1)),
+});
   
 const getPhotosData = () => Array.from({length: MAX_PHOTOS}).map((element, index) => createPhotosData(index + 1));
   
