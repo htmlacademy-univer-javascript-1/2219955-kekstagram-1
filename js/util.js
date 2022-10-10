@@ -8,4 +8,5 @@ const getRandomPositiveInteger = (a, b) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
+//экспорт 
 export {getRandomArrayElement};
