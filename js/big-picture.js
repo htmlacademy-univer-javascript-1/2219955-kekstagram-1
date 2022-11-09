@@ -8,7 +8,7 @@ const addComments = (comments) => {
     const fragment = document.createDocumentFragment();
     comments.forEach ((comment) => {
         const commentClone = commentTemplate.cloneNode(true);
-        const image = cloneComment.querySelector('.social__picture');
+        const image = commentClone.querySelector('.social__picture');
         commentClone.querySelector('.social__text').textContent = comment.message;
         image.alt = comment.name;
         image.src = comment.avatar;
@@ -44,4 +44,5 @@ const openPhoto = (photo) => {
     document.addEventListener('keydown', closeEscape);
 };
 
+//экспорт
 export { openPhoto };
