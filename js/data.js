@@ -54,6 +54,7 @@ const createPhotosData = (id) => ({
   likes: getRandomPositiveInteger(countLikes.MIN, countLikes.MAX),
   comments: Array.from({length: getRandomPositiveInteger(1, MAX_COMMENTS)}).map((element, index) => createComments(index + 1)),
 });
+
   
 const getPhotosData = () => Array.from({length: MAX_PHOTOS}).map((element, index) => createPhotosData(index + 1));
   
