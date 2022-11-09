@@ -31,6 +31,7 @@ const closeEscape = (evt) => {
     }
 }
 
+
 const openPhoto = (photo) => {
     body.classList.add('modal-open');
     bigPicture.classList.remove('hidden');
