@@ -1,5 +1,5 @@
-import { getPhotosData } from './data.js';
-import{ createPhotos } from './render.js';
-
-const arr = getPhotosData();
-createPhotos(arr);
+import './big-picture.js';
+import './util.js';
+import './picture.js';
+import './new-form.js';
+import './validation-form.js';
