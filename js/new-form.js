@@ -18,19 +18,17 @@ const closeForm = () => {
   form.removeEventListener('submit', onFormSubmit);
 };
 
-const onCloseClick = () => {
+const onCloseButtonClick = () => {
   closeForm();
-  cancelButton.removeEventListener('click', onCloseClick);
+  cancelButton.removeEventListener('click', onCloseButtonClick);
 };
-
-const onClosingButtonClick = () => onCloseClick();
 
 const isNotTarget = (evt) => !evt.target.classList.contains('text__hashtags')
 && !evt.target.classList.contains('text__description');
 
 const onDocumentEscKeyDown = (evt) => {
   if(isEscape(evt) && isNotTarget(evt)){
-    onCloseClick();
+    onCloseButtonClick();
     document.removeEventListener('keydown', onDocumentEscKeyDown);
   }
 };
@@ -40,7 +38,7 @@ const onUploadingFieldInput = () => {
   setDefaultEffect();
   imageOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  cancelButton.addEventListener('click', onClosingButtonClick);
+  cancelButton.addEventListener('click', onCloseButtonClick);
   document.addEventListener('keydown', onDocumentEscKeyDown);
   form.addEventListener('submit', onFormSubmit);
 };

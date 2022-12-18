@@ -6,6 +6,7 @@ import './validation-form.js';
 import './scale.js';
 import './effect.js';
 import './filter.js';
+import './uploading-picture.js';
 
 let photos = [];
 
