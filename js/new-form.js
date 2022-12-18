@@ -3,19 +3,19 @@ import { isEscape } from './util.js';
 import { setDefaultScale } from './scale.js';
 import { setDefaultEffect } from './effect.js';
 
-const form = document.querySelector('.img-upload__form');
-const imageOverlay = form.querySelector('.img-upload__overlay');
-const uploadingField = form.querySelector('#upload-file');
-const cancelButton = form.querySelector('#upload-cancel');
+const uploadForm = document.querySelector('.img-upload__form');
+const imageOverlay = uploadForm.querySelector('.img-upload__overlay');
+const uploadingField = uploadForm.querySelector('#upload-file');
+const cancelButton = uploadForm.querySelector('#upload-cancel');
 
 const closeForm = () => {
   imageOverlay.classList.add('hidden');
   document.body.classList.remove('modal-open');
   uploadingField.value = '';
-  form.querySelector('.text__hashtags').value = '';
-  form.querySelector('.text__description').value = '';
+  uploadForm.querySelector('.text__hashtags').value = '';
+  uploadForm.querySelector('.text__description').value = '';
   resetForm();
-  form.removeEventListener('submit', onFormSubmit);
+  uploadForm.removeEventListener('submit', onFormSubmit);
 };
 
 const onCloseButtonClick = () => {
@@ -40,7 +40,7 @@ const onUploadingFieldInput = () => {
   document.body.classList.add('modal-open');
   cancelButton.addEventListener('click', onCloseButtonClick);
   document.addEventListener('keydown', onDocumentEscKeyDown);
-  form.addEventListener('submit', onFormSubmit);
+  uploadForm.addEventListener('submit', onFormSubmit);
 };
 
 uploadingField.addEventListener('input', onUploadingFieldInput);

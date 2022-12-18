@@ -29,6 +29,7 @@ const onFail = () => {
   messageAlert.textContent = 'Ошибка загрузки данных';
   document.body.append(messageAlert);
 };
+
 const getAllData = () => photos;
 
 sendNewRequest(onSuccess, onFail, 'GET');
